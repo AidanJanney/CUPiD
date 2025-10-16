@@ -41,8 +41,8 @@ computation_config:
 # All parameters under global_params get passed to all the notebooks
 # /glade/campaign/cesm/development/cross-wg/diagnostic_framework/CESM_output_for_testing/CROCODILE_tutorial_nwa12_MARBL
 global_params:
-  case_name: 'CROCODILE_tutorial_nwa12_MARBL'
-  CESM_output_dir: '/glade/campaign/cgd/oce/projects/CROCODILE/workshops/2025/Diagnostics/CESM_Output/'
+  case_name: 'CROCODILE_tutorial_nwa12_MARBL
+  CESM_output_dir: '/glade/campaign/cesm/development/cross-wg/diagnostic_framework/CESM_output_for_testing/'
   start_date: ''
   end_date: ''
   # ts_dir: null # If this is set to null, it will default to CESM_output_dir
@@ -58,7 +58,6 @@ timeseries:
   ts_done: [False]
   overwrite_ts: [False]
   case_name: ['CROCODILE_tutorial_nwa12_MARBL']
-
   ocn:
     vars: ['vo', 'uo', 'thetao', 'so']
     derive_vars: []
@@ -85,25 +84,25 @@ compute_notebooks:
       Regional_Ocean_Report_Card:
         parameter_groups:
           none:
-            sfc_variables: ['SSH', 'tos', 'sos', 'speed', 'SSV', 'SSU']
+            sfc_variables: ['zos', 'tos', 'sos', 'speed', 'SSV', 'SSU']
             monthly_variables: ['thetao', 'so', 'uo', 'vo']
       Regional_Ocean_Animations:
         parameter_groups:
           none:
-            sfc_variables: ['SSH', 'tos', 'sos'] # 'SSV', 'SSU']
+            sfc_variables: ['zos', 'tos', 'sos'] # 'SSV', 'SSU']
             max_frames: 60 # max frames for GIFs
       Regional_Ocean_Atmospheric_Forcing:
         parameter_groups:
           none:
             atm_variables: ['tauuo', 'tauvo', 'hfds']
             ocn_variables: ['uo', 'vo', 'thetao']
-      Regional_Ocean_OBC: # needs to access regional MOM6 input directory (see INPUTDIR in user_nl_mom)
-        parameter_groups: # if mom6_input_dir is given, will ignore case_root, otherwise looks for INPUTDIR in case_root
-          none:
-            case_root: null
-            mom6_input_dir: '/glade/campaign/cgd/oce/projects/CROCODILE/workshops/2025/Diagnostics/Input_Dir/CROCODILE_tutorial_nwa12_MARBL_ocnice/ocnice'
-            obc_file_str: 'forcing_obc_segment_00*.nc' # pattern for boundary condition file names
-            ocn_variables: ['uo', 'vo', 'thetao', 'so']
+      # Regional_Ocean_OBC: # needs to access regional MOM6 input directory (see INPUTDIR in user_nl_mom)
+      #   parameter_groups: # if mom6_input_dir is given, will ignore case_root, otherwise looks for INPUTDIR in case_root
+      #     none:
+      #       case_root: null
+      #       mom6_input_dir: '/glade/campaign/cgd/oce/projects/CROCODILE/workshops/2025/Diagnostics/Input_Dir/CROCODILE_tutorial_nwa12_MARBL_ocnice/ocnice'
+      #       obc_file_str: 'forcing_obc_segment_00*.nc' # pattern for boundary condition file names
+      #       ocn_variables: ['uo', 'vo', 'thetao', 'so']
 
 
 
@@ -134,7 +133,7 @@ book_toc:
           - file: ocn/Regional_Ocean_Report_Card
           - file: ocn/Regional_Ocean_Animations
           - file: ocn/Regional_Ocean_Atmospheric_Forcing
-          - file: ocn/Regional_Ocean_OBC
+          # - file: ocn/Regional_Ocean_OBC
 
 #####################################
 # Keys for Jupyter Book _config.yml #
