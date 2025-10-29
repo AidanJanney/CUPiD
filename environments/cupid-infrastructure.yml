@@ -9,7 +9,6 @@ dependencies:
     - intake-esm
     - jinja2
     - jupyter-book
-    - nb_conda_kernels
     - nco
     - pandas
     - papermill

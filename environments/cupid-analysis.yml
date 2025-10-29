@@ -14,7 +14,6 @@ dependencies:
   - intake-xarray
   - ipykernel
   - matplotlib
-  - nb_conda_kernels
   - nc-time-axis
   - ncar-jobqueue
   - netcdf4
@@ -22,7 +21,7 @@ dependencies:
   - pip
   - python==3.11.4
   - uxarray
-  - xarray=2025.6.1
+  - xarray
   - xesmf
   - yaml
   - zarr

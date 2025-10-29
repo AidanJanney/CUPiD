@@ -40,7 +40,7 @@ dependencies = [
 
 [project.urls]
 repository = "https://github.com/NCAR/CUPiD"
-documentation = "https://ncar.github.io/CUPiD"
+documentation = "https://nbscuid.readthedocs.io"
 
 
 [project.scripts]
